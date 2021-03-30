@@ -19,18 +19,18 @@ export const Settings = ({
 
   return (
     <Wrapper>
-    <Checkbox
-      id="1"
-      checked={checkboxState}
-      onChange={toggleCheckbox}
-      label="Use custom exchange rate"
-    />
-    <Input 
-      type="number" 
-      disabled={!checkboxState}
-      onChange={onInputChange}
-      value={customValue}
-    />
+      <Checkbox
+        id="1"
+        checked={checkboxState}
+        onChange={toggleCheckbox}
+        label="Use custom exchange rate"
+      />
+      <Input 
+        type="number" 
+        disabled={!checkboxState}
+        onChange={onInputChange}
+        value={customValue}
+      />
     </Wrapper>
   )
 }

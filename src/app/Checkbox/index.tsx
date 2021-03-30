@@ -26,7 +26,7 @@ export const Checkbox = ({
     <Input
       onChange={onChange}
       id={id}
-      type='checkbox'
+      type="checkbox"
       name={name}
       checked={checked}
     />

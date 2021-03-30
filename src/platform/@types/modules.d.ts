@@ -1,3 +1,2 @@
-
-declare module 'Config';
+declare module 'Config'
 declare module 'styled-components'

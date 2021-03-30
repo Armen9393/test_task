@@ -18,7 +18,6 @@ export const StyledLink = styled(Link)`
 `
 
 export const AppWrapper = styled.div`
-  width: fit-content;
   margin: auto;
   border: black solid 5px;
   padding: 10px;

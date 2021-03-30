@@ -45,5 +45,4 @@ export const Input = styled.input`
   &:checked+${Label}::before {
     background-image: url(${checked});
   }
-
 `

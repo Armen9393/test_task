@@ -27,21 +27,20 @@ export const Converter = ({
   })
 
  return (
-    <Wrapper>
-     <Currency> UAH - US Dollar</Currency>
-      <Input 
-        type="number"
-        onChange={onInputChange}
-        value={inputValue}
-      />
-      <Output>
-       <Text>
-        Buy: {result?.buy}
-       </Text>
-       <Text>
-        Sale: {result?.sale}
-       </Text>
-      </Output>
-    </Wrapper>
-  )
+  <Wrapper>
+    <Currency>UAH - US Dollar</Currency>
+    <Input 
+      type="number"
+      onChange={onInputChange}
+      value={inputValue}
+    />
+    <Output>
+      <Text>
+      Buy: {result?.buy}
+      </Text>
+      <Text>
+      Sale: {result?.sale}
+      </Text>
+    </Output>
+  </Wrapper>)
 }

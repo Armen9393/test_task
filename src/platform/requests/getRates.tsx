@@ -1,8 +1,8 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios'
 
 export type Rates = {
     ccy?: string,
-    base_ccy?:string,
+    base_ccy?: string,
     buy: number,
     sale: number,
 }

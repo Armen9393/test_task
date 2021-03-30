@@ -1,4 +1,4 @@
-import { FunctionComponent, memo } from 'react';
+import { FunctionComponent, memo } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -8,9 +8,9 @@ import {
 
 import { StyledLink, AppWrapper } from './styled'
 
-import { Converter } from './Converter';
-import { Settings } from './Settings';
-import { useSettings } from './hooks';
+import { Converter } from './Converter'
+import { Settings } from './Settings'
+import { useSettings } from './hooks'
 
 const App: FunctionComponent = () => {
 
@@ -49,7 +49,7 @@ const App: FunctionComponent = () => {
         </Switch>
       </Router>
     </AppWrapper>
-  );
+  )
 }
 
-export default memo(App);
+export default memo(App)
