@@ -7,6 +7,7 @@ import {
 
 import type { Rates } from 'platform/requests/getRates'
 import { getRates } from 'platform/requests/getRates'
+import { roundNumbers } from 'platform/helpers'
 
 type Props = {
   customValue: string,
@@ -29,14 +30,14 @@ export const useConverter = ({
   const countRates = useCallback((rates: Rates) => {
     if(inputValue && rates) {
       setResult({
-        buy: (+inputValue * rates.buy).toFixed(3),
-        sale: (+inputValue * rates.sale).toFixed(3),
+        buy: roundNumbers(+inputValue * rates.buy),
+        sale: roundNumbers(+inputValue * rates.sale),
       })
     }
-    else {
+    else if(!inputValue && rates){
       setResult({
-        buy: rates?.buy,
-        sale: rates?.sale,
+        buy: roundNumbers(rates.buy),
+        sale: roundNumbers(rates.sale),
       })
     }
   }, [inputValue])
