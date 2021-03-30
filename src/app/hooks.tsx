@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 export const useSettings = () => {
 
-  const [ checkboxState, setCutsomRate ] = useState(false)
-  const [ customValue, setCustomValue ] = useState('')
+  const [ checkboxState, setCutsomRate ] = useState<boolean>(false)
+  const [ customValue, setCustomValue ] = useState<string>('')
 
   const toggleCheckbox = () => {
     setCutsomRate(!checkboxState)

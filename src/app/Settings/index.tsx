@@ -1,7 +1,8 @@
-import { Wrapper } from './styled'
-import { Input } from 'app/Converter/styled'
-import { Checkbox } from 'app/Checkbox'
 import type { ChangeEvent } from 'react'
+
+import { Checkbox } from 'app/Checkbox'
+import { Input } from 'app/Converter/styled'
+import { Wrapper } from './styled'
 
 type Props = {
   checkboxState: boolean,
@@ -25,7 +26,7 @@ export const Settings = ({
         onChange={toggleCheckbox}
         label="Use custom exchange rate"
       />
-      <Input 
+      <Input
         type="number" 
         disabled={!checkboxState}
         onChange={onInputChange}

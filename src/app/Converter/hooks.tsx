@@ -15,7 +15,7 @@ type Props = {
 
 type ResultProps = {
   buy: string | number, 
-  sale: string | number
+  sale: string | number,
 }
 
 export const useConverter = ({
@@ -25,6 +25,21 @@ export const useConverter = ({
   const [ inputValue, setInputValue ] = useState<number | string>(1)
   const [ rates, setRates ] = useState<Rates>()
   const [ result, setResult ] = useState<ResultProps>()
+
+  const countRates = useCallback((rates: Rates) => {
+    if(inputValue && rates) {
+      setResult({
+        buy: (+inputValue * rates.buy).toFixed(3),
+        sale: (+inputValue * rates.sale).toFixed(3),
+      })
+    }
+    else {
+      setResult({
+        buy: rates?.buy,
+        sale: rates?.sale,
+      })
+    }
+  }, [inputValue])
 
   useEffect(() => {
     if(checkboxState) {
@@ -38,26 +53,19 @@ export const useConverter = ({
         countRates(res.data[0])
       })
     }
-  }, [])
-
-  const countRates = useCallback((rates: Rates) => {
-    if(inputValue && rates) {
-      setResult({
-        buy: (+inputValue * rates.buy).toFixed(3),
-        sale: (+inputValue * rates.sale).toFixed(3)
-      })
-    }
-    else {
-      setResult({
-        buy: rates?.buy,
-        sale: rates?.sale
-      })
-    }
-  }, [inputValue])
+  }, [
+    customValue, 
+    countRates, 
+    checkboxState,
+  ])
 
   useEffect(() => {
     countRates(rates)
-  }, [inputValue, rates])
+  }, [
+    countRates, 
+    inputValue, 
+    rates,
+  ])
 
   const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     if(+event.target.value >= 0) {
